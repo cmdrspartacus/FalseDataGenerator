@@ -1,5 +1,5 @@
 import csv
-import pprint
+import random
 
 with open('firstNamesScotland.csv', encoding='mac_roman') as namesDocument:
     reader = csv.reader(namesDocument)
@@ -7,12 +7,20 @@ with open('firstNamesScotland.csv', encoding='mac_roman') as namesDocument:
 
     quantity = len(namesList) - 1
 
+    girlsFirstNames = []
 
-
-    i = 10
-    while i < 150:
-        print(namesList[i][3])
+    i = 4
+    while i < quantity:
+        girlsFirstNames.append(namesList[i][3])
         i = i + 1
 
+    print(len(girlsFirstNames))
+
+    def retrieveGirlsFirstName():
+        randNum = random.randrange(0,len(girlsFirstNames))
+
+        return girlsFirstNames[randNum]
 
 
+
+print(retrieveGirlsFirstName())
